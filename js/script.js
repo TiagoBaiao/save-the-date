@@ -14,6 +14,17 @@ document.getElementById('envelope').addEventListener('click', function() {
             }
             document.body.style.background = 'white';
             document.getElementById('content').style.display = 'block';
+            // Show and fade out white-fader
+            var whiteFader = document.getElementById('white-fader');
+            if (whiteFader) {
+                whiteFader.style.display = 'block';
+                // Force reflow for transition
+                void whiteFader.offsetWidth;
+                whiteFader.classList.add('fade-out');
+                setTimeout(() => {
+                    whiteFader.parentNode.removeChild(whiteFader);
+                }, 1000);
+            }
         }, 1000);
     }, 800);
 });

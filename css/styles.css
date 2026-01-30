@@ -415,6 +415,23 @@ body.intro-bg {
     pointer-events: none;
 }
 
+.white-fader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--white);
+    z-index: 3000;
+    opacity: 1;
+    transition: opacity 1s ease;
+    pointer-events: none;
+}
+
+.white-fader.fade-out {
+    opacity: 0;
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .envelope {
