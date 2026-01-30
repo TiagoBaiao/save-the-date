@@ -26,6 +26,10 @@ body {
     color: var(--text-dark);
 }
 
+body.intro-bg {
+    background: linear-gradient(135deg, var(--olive-green) 0%, var(--dark-olive) 100%);
+}
+
 .container {
     perspective: 1000px;
 }
@@ -464,4 +468,3 @@ body {
         display: none;
     }
 }
-
