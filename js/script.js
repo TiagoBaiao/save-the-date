@@ -57,9 +57,10 @@ function initCountdown() {
 
     function triggerFlip(unit, newValue) {
         const card = document.getElementById(`${unit}-card`);
+        const frontSpan = document.getElementById(`${unit}-front`);
         const backSpan = document.getElementById(`${unit}-back`);
 
-        if (card && backSpan) {
+        if (card && backSpan && frontSpan) {
             // Set the new value on the back face before flipping
             backSpan.textContent = newValue;
 
@@ -67,9 +68,9 @@ function initCountdown() {
             card.classList.add('flipping');
 
             setTimeout(() => {
-                // After animation completes, swap front and back values
-                const frontSpan = document.getElementById(`${unit}-front`);
+                // After animation completes, update front with new value
                 frontSpan.textContent = newValue;
+                // Remove flipping class to reset back card to starting position
                 card.classList.remove('flipping');
             }, 600);
         }
