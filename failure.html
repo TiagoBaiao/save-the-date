@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Submission Error - Eleanor & Thomas</title>
+    <script src="js/globals.js"></script>
+    <title>Submission Error - <span data-fiance="1"></span> & <span data-fiance="2"></span></title>
     <link rel="stylesheet" href="./css/message-styles.css">
 </head>
 <body>
@@ -24,6 +25,11 @@
             <a href="rsvp.html" class="btn-retry">Try Again</a>
         </div>
     </div>
+    <script>
+      // Populate fiances' names in the title and anywhere else in the document
+      document.title = `Submission Error - ${FIANCE_1} & ${FIANCE_2}`;
+      document.querySelectorAll('[data-fiance="1"]').forEach(el => el.textContent = FIANCE_1);
+      document.querySelectorAll('[data-fiance="2"]').forEach(el => el.textContent = FIANCE_2);
+    </script>
 </body>
 </html>
-

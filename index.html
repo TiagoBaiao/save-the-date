@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/globals.js"></script>
     <title>Save the Date</title>
     <link rel="stylesheet" href="./css/styles.css">
 </head>
@@ -19,9 +20,9 @@
         <!-- Hero Section -->
         <section class="hero">
             <div class="hero-content">
-                <h1 class="couple-names">Eleanor & Thomas</h1>
+                <h1 class="couple-names"><span data-fiance="1"></span> & <span data-fiance="2"></span></h1>
                 <div class="hero-image">
-                    <img src="images/couple-placeholder.png" alt="Eleanor and Thomas">
+                    <img src="images/couple-placeholder.png" alt="Elisabete e Tiago">
                 </div>
                 <a href="rsvp.html" target="_blank" class="btn-rsvp">RSVP</a>
             </div>
@@ -130,10 +131,15 @@
         <!-- Footer -->
         <footer class="footer">
             <p>We can't wait to celebrate with you!</p>
-            <p class="footer-small">Eleanor & Thomas</p>
+            <p class="footer-small"><span data-fiance="1"></span> & <span data-fiance="2"></span></p>
         </footer>
     </div>
 </div>
 <script src="js/script.js"></script>
+<script>
+  // Populate all fiances' name placeholders
+  document.querySelectorAll('[data-fiance="1"]').forEach(el => el.textContent = FIANCE_1);
+  document.querySelectorAll('[data-fiance="2"]').forEach(el => el.textContent = FIANCE_2);
+</script>
 </body>
 </html>
