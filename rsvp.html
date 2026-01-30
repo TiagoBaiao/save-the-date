@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSVP - Eleanor & Thomas</title>
+    <link rel="stylesheet" href="./css/rsvp-styles.css">
+</head>
+<body>
+    <div class="rsvp-container">
+        <div class="rsvp-header">
+            <h1>RSVP</h1>
+            <p>We would love to celebrate with you!</p>
+        </div>
+
+        <form id="rsvpForm" class="rsvp-form">
+            <!-- Individual/Group Toggle -->
+            <div class="form-group toggle-group">
+                <label class="toggle-label">
+                    <input type="checkbox" id="groupToggle" class="toggle-checkbox">
+                    <span class="toggle-slider"></span>
+                    <span class="toggle-text">Submit as a group/family</span>
+                </label>
+            </div>
+
+            <!-- Guests Container -->
+            <div id="guestsContainer">
+                <div class="guest-card" data-guest-index="0">
+                    <div class="guest-header">
+                        <h3>Guest Details</h3>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName_0">First Name *</label>
+                            <input type="text" id="firstName_0" name="firstName_0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName_0">Last Name *</label>
+                            <input type="text" id="lastName_0" name="lastName_0" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="attendance_0">Attendance *</label>
+                        <select id="attendance_0" name="attendance_0" required>
+                            <option value="">Please select...</option>
+                            <option value="attending">Joyfully accepts</option>
+                            <option value="not_sure">Not sure yet</option>
+                            <option value="declined">Regretfully declines</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dietary_0">Dietary Restrictions</label>
+                        <select id="dietary_0" name="dietary_0" class="dietary-select">
+                            <option value="none">None</option>
+                            <option value="vegetarian">Vegetarian</option>
+                            <option value="vegan">Vegan</option>
+                            <option value="pescatarian">Pescatarian</option>
+                            <option value="gluten-free">Gluten-free</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group dietary-other" id="dietaryOther_0" style="display: none;">
+                        <label for="dietaryCustom_0">Please specify</label>
+                        <input type="text" id="dietaryCustom_0" name="dietaryCustom_0" placeholder="Please specify your dietary restriction">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="allergies_0">Food Allergies/Intolerances</label>
+                        <textarea id="allergies_0" name="allergies_0" rows="3" placeholder="Please list any food allergies or intolerances"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="observations_0">Additional Comments</label>
+                        <textarea id="observations_0" name="observations_0" rows="3" placeholder="Any special requests or notes you'd like to share"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add Guest Button (hidden by default) -->
+            <div id="addGuestContainer" style="display: none;">
+                <button type="button" id="addGuestBtn" class="btn-add-guest">
+                    <span class="plus-icon">+</span> Add Another Guest
+                </button>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-actions">
+                <button type="submit" class="btn-submit">Submit RSVP</button>
+            </div>
+        </form>
+
+        <div class="rsvp-footer">
+            <a href="index.html" class="link-back">← Back to Wedding Website</a>
+        </div>
+    </div>
+
+    <script src="js/rsvp.js"></script>
+</body>
+</html>
+
