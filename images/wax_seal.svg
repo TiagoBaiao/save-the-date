@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Wax seal base -->
+  <defs>
+    <radialGradient id="waxGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#d44334;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#c0392b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a33226;stop-opacity:1" />
+    </radialGradient>
+    <filter id="waxShadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="0" dy="2" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.5"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Main seal circle -->
+  <circle cx="100" cy="100" r="88" fill="url(#waxGradient)" filter="url(#waxShadow)"/>
+
+  <!-- Drip effects -->
+  <ellipse cx="178" cy="168" rx="7" ry="7" fill="#c0392b" opacity="0.8"/>
+  <ellipse cx="170" cy="185" rx="3" ry="3" fill="#c0392b" opacity="0.8"/>
+
+  <!-- Embossed circle effect -->
+  <circle cx="100" cy="100" r="70" fill="none" stroke="#ab3326" stroke-width="1" opacity="0.3"/>
+  <circle cx="100" cy="100" r="70" fill="rgba(51, 51, 51, 0.15)"/>
+
+  <!-- Initials E&T -->
+  <text x="100" y="115" font-family="Georgia, serif" font-size="48" fill="#ab3326" text-anchor="middle" font-weight="normal">E&amp;T</text>
+</svg>
+
