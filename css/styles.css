@@ -279,6 +279,110 @@ body.intro-bg {
     font-size: 1rem;
 }
 
+/* Countdown Timer */
+.countdown-display {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    perspective: 1000px;
+}
+
+.flip-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    perspective: 600px;
+}
+
+.flip-card {
+    position: relative;
+    width: 120px;
+    height: 140px;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease-in-out;
+}
+
+.flip-card.flipping {
+    animation: flipCard 0.6s ease-in-out;
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    border: 2px solid var(--olive-green);
+    background: linear-gradient(to bottom, var(--white) 0%, #f5f5f5 50%, #e8e8e8 100%);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15),
+                0 -2px 4px rgba(0, 0, 0, 0.1) inset,
+                0 2px 3px rgba(255, 255, 255, 0.4) inset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+.flip-card-front {
+    transform: rotateX(0deg);
+}
+
+.flip-card-back {
+    transform: rotateX(180deg);
+}
+
+.flip-card-front span,
+.flip-card-back span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 600;
+    color: var(--olive-green);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Flip Animation */
+@keyframes flipCard {
+    0% {
+        transform: rotateX(0deg);
+    }
+    100% {
+        transform: rotateX(180deg);
+    }
+}
+
+.flip-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.celebration-message {
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+.celebration-message h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    color: var(--olive-green);
+    margin-bottom: 1rem;
+}
+
+.celebration-message p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    color: var(--text-light);
+}
+
 /* Schedule Timeline */
 .timeline {
     max-width: 700px;
@@ -476,6 +580,25 @@ body.intro-bg {
     .hotels {
         grid-template-columns: 1fr;
     }
+
+    .countdown-display {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .flip-card {
+        width: 100px;
+        height: 120px;
+    }
+
+    .flip-card-front span,
+    .flip-card-back span {
+        font-size: 3rem;
+    }
+
+    .flip-label {
+        font-size: 0.9rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -503,5 +626,32 @@ body.intro-bg {
 
     .timeline-item:not(:last-child)::after {
         display: none;
+    }
+
+    .countdown-display {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .flip-card {
+        width: 80px;
+        height: 100px;
+    }
+
+    .flip-card-front span,
+    .flip-card-back span {
+        font-size: 2.5rem;
+    }
+
+    .flip-label {
+        font-size: 0.8rem;
+    }
+
+    .celebration-message h3 {
+        font-size: 2.5rem;
+    }
+
+    .celebration-message p {
+        font-size: 1.1rem;
     }
 }
