@@ -58,10 +58,9 @@ function createGuestCard(index) {
             <div class="form-group">
                 <label for="attendance_${index}">Attendance *</label>
                 <select id="attendance_${index}" name="attendance_${index}" required>
-                    <option value="">Please select...</option>
-                    <option value="attending">Joyfully accepts</option>
-                    <option value="not_sure">Not sure yet</option>
-                    <option value="declined">Regretfully declines</option>
+                    <option value="" disabled selected>Please select...</option>
+                    <option value="true">Joyfully accepts</option>
+                    <option value="false">Regretfully declines</option>
                 </select>
             </div>
 
@@ -149,29 +148,23 @@ rsvpForm.addEventListener('submit', async function(event) {
     guestCards.forEach((card) => {
         const index = card.getAttribute('data-guest-index');
         const guest = {
-            firstName: formData.get(`firstName_${index}`),
-            lastName: formData.get(`lastName_${index}`),
-            attendance: formData.get(`attendance_${index}`),
-            dietary: formData.get(`dietary_${index}`),
-            allergies: formData.get(`allergies_${index}`),
-            observations: formData.get(`observations_${index}`)
+            firstName: (formData.get(`firstName_${index}`) || '').trim(),
+            lastName: (formData.get(`lastName_${index}`) || '').trim(),
+            going: formData.get(`attendance_${index}`) === 'true'
         };
-
-        // Add custom dietary if "other" is selected
-        if (guest.dietary === 'other') {
-            guest.dietaryCustom = formData.get(`dietaryCustom_${index}`);
-        }
 
         data.guests.push(guest);
     });
 
     try {
         // Submit to the backend
-        const response = await fetch('https://example.com', {
+        const response = await fetch('https://back4app-proxy.vercel.app/api/proxy', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
+            referrer: 'https://tiagobaiao.github.io/save-the-date/rsvp.html',
+            referrerPolicy: 'strict-origin-when-cross-origin',
             body: JSON.stringify(data)
         });
 
@@ -188,4 +181,3 @@ rsvpForm.addEventListener('submit', async function(event) {
         window.location.href = 'failure.html';
     }
 });
-
