@@ -26,10 +26,6 @@ body {
     color: var(--text-dark);
 }
 
-body.intro-bg {
-    background: linear-gradient(135deg, var(--olive-green) 0%, var(--dark-olive) 100%);
-}
-
 .container {
     perspective: 1000px;
 }
@@ -81,11 +77,11 @@ body.intro-bg {
     height: 4.4rem;
     position: absolute;
     left: 50%;
-    top: 180px;
+    top: 60%;
     margin: -2.2rem 0 0 -2.2rem;
     z-index: 5;
     transition: transform 0.8s ease, opacity 0.5s ease;
-    transform-origin: 50% -180px;
+    transform-origin: 50% -220%;
 }
 
 .seal img {
@@ -521,6 +517,13 @@ body.intro-bg {
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
+    .seal {
+        width: 25%;
+        height: 25%;
+        left: 50%;
+        top: 64%;
+    }
+
     .envelope {
         width: 300px;
         height: 225px;
@@ -590,6 +593,13 @@ body.intro-bg {
 }
 
 @media (max-width: 480px) {
+    .seal {
+        width: 25%;
+        height: 25%;
+        left: 50%;
+        top: 64%;
+    }
+
     .couple-names {
         font-size: 2rem;
     }
