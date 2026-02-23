@@ -31,8 +31,8 @@ body {
 }
 
 .envelope {
-    width: 400px;
-    height: 300px;
+    width: 600px;
+    height: 401px;
     position: relative;
     cursor: pointer;
     transition: transform 0.6s;
@@ -51,7 +51,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 77%;
+    height: 100%;
     z-index: 3;
     pointer-events: none;
     transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
@@ -516,7 +516,7 @@ body {
 @media (max-width: 768px) {
     .envelope {
         width: 300px;
-        height: 225px;
+        height: 200px;
     }
 
     .couple-names {
