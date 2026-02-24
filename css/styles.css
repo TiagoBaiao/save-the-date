@@ -40,7 +40,7 @@ body {
     background: none;
     border: none;
     perspective: 1000px; /* Moved from container to ensure 3D context works correctly */
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0 3px 6px, rgba(0, 0, 0, 0.23) 0 3px 6px;
 }
 
 .envelope:hover {
@@ -133,7 +133,7 @@ body {
     font-size: 4rem;
     font-weight: 300;
     color: var(--olive-green);
-    margin-bottom: 0rem;
+    margin-bottom: 0;
     letter-spacing: 2px;
     text-align: center;
 }
@@ -634,7 +634,7 @@ body {
 
     .couple-names-intro {
         font-size: 1.8rem;
-        margin-bottom: 0rem;
+        margin-bottom: 0;
     }
 
     .date-intro {
