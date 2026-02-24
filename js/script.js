@@ -38,8 +38,8 @@ document.getElementById('envelope').addEventListener('click', function() {
                     initGallery();
                 }, 1000);
             }
-        }, 1000);
-    }, 800);
+        }, 500);
+    }, 2500);
 });
 
 // Countdown Timer Logic
