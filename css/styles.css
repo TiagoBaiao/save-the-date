@@ -14,6 +14,7 @@
     --off-white: #FAFAFA;
     --text-dark: #2C2C2C;
     --text-light: #5A5A5A;
+    --cor-de-mo: #FFFBF2;
 }
 
 body {
@@ -501,7 +502,7 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(135deg, var(--white) 0%, var(--olive-green) 100%);
+    background: linear-gradient(135deg, var(--white) 0%, var(--cor-de-mo) 100%);
     z-index: 2000;
     display: flex;
     justify-content: center;
