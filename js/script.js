@@ -1,3 +1,9 @@
+setTimeout(() => {
+    document.getElementById('envelope-instruction').style.transition = 'opacity 1s ease';
+    document.getElementById('envelope-instruction').style.opacity = '0.5';
+
+}, 1000);
+
 document.getElementById('envelope').addEventListener('click', function() {
     this.classList.add('open');
     var introContainer = document.querySelector('#intro-fader .container');
@@ -5,8 +11,8 @@ document.getElementById('envelope').addEventListener('click', function() {
         var coupleNames = introContainer.querySelector('.couple-names-intro');
         var date = introContainer.querySelector('.date-intro');
         var instruction = introContainer.querySelector('.envelope-instruction');
-        if (coupleNames) { console.log("opacity"); coupleNames.style.opacity = '0'; }
-        if (date) { console.log("opacity"); date.style.opacity = '0'; }
+        if (coupleNames) { coupleNames.style.opacity = '0'; }
+        if (date) { date.style.opacity = '0'; }
         if (instruction) { instruction.style.opacity = '0'; }
     }
     setTimeout(() => {

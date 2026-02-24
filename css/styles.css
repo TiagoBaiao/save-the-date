@@ -540,7 +540,7 @@ body {
     color: var(--text-light);
     text-align: center;
     margin-top: 10px;
-    opacity: 0.5;
+    opacity: 0;
     transition: opacity 0.6s;
 }
 
