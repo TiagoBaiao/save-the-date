@@ -1,5 +1,14 @@
 document.getElementById('envelope').addEventListener('click', function() {
     this.classList.add('open');
+    var introContainer = document.querySelector('#intro-fader .container');
+    if (introContainer) {
+        var coupleNames = introContainer.querySelector('.couple-names-intro');
+        var date = introContainer.querySelector('.date-intro');
+        var instruction = introContainer.querySelector('.envelope-instruction');
+        if (coupleNames) { console.log("opacity"); coupleNames.style.opacity = '0'; }
+        if (date) { console.log("opacity"); date.style.opacity = '0'; }
+        if (instruction) { instruction.style.opacity = '0'; }
+    }
     setTimeout(() => {
         this.style.transition = 'opacity 1s ease';
         this.style.opacity = '0';
