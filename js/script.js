@@ -1,7 +1,26 @@
 setTimeout(() => {
-    document.getElementById('envelope-instruction').style.transition = 'opacity 1s ease';
-    document.getElementById('envelope-instruction').style.opacity = '0.5';
+    const envelope = document.getElementById('envelope');
+    const envelopeInstruction = document.getElementById('envelope-instruction');
+    envelopeInstruction.style.transition = 'opacity 1s ease';
+    envelopeInstruction.style.opacity = '0.5';
 
+    // Remove inline opacity when hover effect is applied
+    function onMouseEnter() {
+        envelopeInstruction.style.transition = 'opacity 0.6s ease';
+        envelopeInstruction.style.opacity = '0';
+    }
+    function onMouseLeave() {
+        envelopeInstruction.style.transition = 'opacity 0.6s ease';
+        envelopeInstruction.style.opacity = '0.5';
+    }
+    envelope.addEventListener('mouseenter', onMouseEnter);
+    envelope.addEventListener('mouseleave', onMouseLeave);
+
+    // Remove hover listeners once clicked so they don't fight the click handler
+    envelope.addEventListener('click', () => {
+        envelope.removeEventListener('mouseenter', onMouseEnter);
+        envelope.removeEventListener('mouseleave', onMouseLeave);
+    }, { once: true });
 }, 1000);
 
 document.getElementById('envelope').addEventListener('click', function() {
