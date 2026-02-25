@@ -117,12 +117,18 @@ body {
 }
 
 .couple-names {
+    position: absolute;
+    top: 6%;
+    left: 0;
+    right: 0;
     font-family: 'Cormorant Garamond', serif;
     font-size: 4rem;
     font-weight: 300;
-    color: var(--olive-green);
-    margin-bottom: 3rem;
+    color: saddlebrown;
+    margin-bottom: 0;
     letter-spacing: 2px;
+    text-align: center;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
 }
 
 .couple-names-intro {
@@ -133,6 +139,21 @@ body {
     margin-bottom: 0;
     letter-spacing: 2px;
     text-align: center;
+}
+
+.venue-title {
+    position: absolute;
+    top: 16%;
+    left: 0;
+    right: 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: saddlebrown;
+    margin-bottom: 0;
+    letter-spacing: 2px;
+    text-align: center;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
 }
 
 .date-intro {
@@ -146,6 +167,7 @@ body {
 }
 
 .hero-image {
+    position: relative;
     margin: 0 auto 3rem auto;
     height: auto;
     overflow: hidden;
@@ -170,7 +192,6 @@ body {
     text-transform: uppercase;
     border-radius: 4px;
     transition: all 0.3s ease;
-    margin-top: 2rem;
     font-size: 0.9rem;
 }
 
@@ -559,10 +580,21 @@ body {
         height: 200px;
     }
 
-    .couple-names,
+    .couple-names {
+        font-size: 2.5rem;
+        color: var(--white);
+        top: 20%
+    }
+
     .couple-names-intro {
         font-size: 2.5rem;
     }
+
+    .venue-title {
+         font-size: 1rem;
+         color: var(--white);
+         top: 28%
+     }
 
     .section-title {
         font-size: 2.2rem;
