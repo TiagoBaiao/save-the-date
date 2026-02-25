@@ -103,19 +103,16 @@ body {
     min-height: 100vh;
 }
 
-/* Hero Section */
 .hero {
     background: var(--white);
-    padding: 4rem 2rem;
+    padding-bottom: 4rem;
     text-align: center;
-    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .hero-content {
-    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -149,10 +146,9 @@ body {
 }
 
 .hero-image {
-    margin: 3rem auto;
-    max-width: 800px;
+    margin: 0 auto 3rem auto;
+    height: auto;
     overflow: hidden;
-    border-radius: 8px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
 }
 
@@ -573,7 +569,7 @@ body {
     }
 
     .hero {
-        padding: 3rem 1.5rem;
+        padding-bottom: 3rem;
     }
 
     .section {
