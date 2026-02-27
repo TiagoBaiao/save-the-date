@@ -113,7 +113,6 @@ body.nav-open {
 
 .hero {
     background: var(--white);
-    padding-bottom: 4rem;
     text-align: center;
     display: flex;
     align-items: center;
@@ -174,7 +173,7 @@ body.nav-open {
 
 .hero-image {
     position: relative;
-    margin: 0 auto 3rem auto;
+    margin: 0 auto 0 auto;
     height: 85vh;
     overflow: hidden;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
@@ -337,9 +336,8 @@ body.nav-open {
     fill: none;
 }
 
-/* Section Styles */
 .section {
-    padding: 5rem 2rem;
+    padding: 3rem 2rem;
 }
 
 .section:nth-child(even) {
@@ -349,6 +347,14 @@ body.nav-open {
 .section-content {
     max-width: 1000px;
     margin: 0 auto;
+}
+
+.section-content > p {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 2rem;
 }
 
 .section-title {
@@ -367,7 +373,6 @@ body.nav-open {
     margin: 1rem auto 3rem;
 }
 
-/* Event Details */
 .event-info {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -695,10 +700,6 @@ body.nav-open {
 
     .section-title {
         font-size: 2.2rem;
-    }
-
-    .hero {
-        padding-bottom: 3rem;
     }
 
     .hero-image {
