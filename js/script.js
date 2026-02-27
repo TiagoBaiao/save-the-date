@@ -151,46 +151,11 @@ function initNav() {
 function initCountdown() {
     const weddingDate = new Date('2026-07-04T14:00:00+01:00');
 
-    // Store previous values to detect changes
-    let previousValues = {
-        days: null,
-        hours: null,
-        minutes: null,
-        seconds: null
-    };
-
-    // Flip animation timeout IDs
-    let flipTimeouts = {
-        days: null,
-        hours: null,
-        minutes: null,
-        seconds: null
-    };
-
     function padZero(num, length = 2) {
         return String(num).padStart(length, '0');
     }
 
-    function triggerFlip(unit, newValue) {
-        const card = document.getElementById(`${unit}-card`);
-        const frontSpan = document.getElementById(`${unit}-front`);
-        const backSpan = document.getElementById(`${unit}-back`);
-
-        if (card && backSpan && frontSpan) {
-            // Set the new value on the back face before flipping
-            backSpan.textContent = newValue;
-
-            // Trigger flip animation
-            card.classList.add('flipping');
-
-            setTimeout(() => {
-                // After animation completes, update front with new value
-                frontSpan.textContent = newValue;
-                // Remove flipping class to reset back card to starting position
-                card.classList.remove('flipping');
-            }, 600);
-        }
-    }
+    let countdownInterval = null;
 
     function updateCountdown() {
         const now = new Date();
@@ -200,6 +165,7 @@ function initCountdown() {
         if (timeLeft <= 0) {
             document.getElementById('countdown-timer').style.display = 'none';
             document.getElementById('celebration-message').style.display = 'block';
+            clearInterval(countdownInterval);
             return;
         }
 
@@ -209,46 +175,17 @@ function initCountdown() {
         const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-        const currentValues = {
-            days: padZero(days, 3),
-            hours: padZero(hours),
-            minutes: padZero(minutes),
-            seconds: padZero(seconds)
-        };
-
-        // Check for changes and trigger flip animations
-        Object.keys(currentValues).forEach(unit => {
-            if (previousValues[unit] !== null && previousValues[unit] !== currentValues[unit]) {
-                // Clear any pending flip
-                if (flipTimeouts[unit]) {
-                    clearTimeout(flipTimeouts[unit]);
-                }
-                triggerFlip(unit, currentValues[unit]);
-            } else if (previousValues[unit] === null) {
-                // Initial load - set values without animation
-                document.getElementById(`${unit}-front`).textContent = currentValues[unit];
-                document.getElementById(`${unit}-back`).textContent = currentValues[unit];
-            }
-        });
-
-        // Store current values for next comparison
-        previousValues = { ...currentValues };
-
-        // Schedule flip animation 100ms before next second changes
-        const msUntilNextSecond = 1000 - (timeLeft % 1000);
-        if (msUntilNextSecond > 100) {
-            flipTimeouts.seconds = setTimeout(() => {
-                const nextSecond = Math.floor(((timeLeft - msUntilNextSecond) % (1000 * 60)) / 1000);
-                triggerFlip('seconds', padZero(nextSecond));
-            }, msUntilNextSecond - 100);
-        }
+        document.getElementById('days').textContent = padZero(days, 3);
+        document.getElementById('hours').textContent = padZero(hours);
+        document.getElementById('minutes').textContent = padZero(minutes);
+        document.getElementById('seconds').textContent = padZero(seconds);
     }
 
     // Initial update
     updateCountdown();
 
     // Update every second
-    setInterval(updateCountdown, 1000);
+    countdownInterval = setInterval(updateCountdown, 1000);
 }
 
 // Gallery Masonry Layout
