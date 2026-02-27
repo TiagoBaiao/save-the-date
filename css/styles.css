@@ -126,17 +126,16 @@ body.nav-open {
 
 .couple-names {
     position: absolute;
-    top: 6%;
+    top: 20%;
     left: 0;
     right: 0;
     font-family: 'Cormorant Garamond', serif;
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 300;
     color: saddlebrown;
     margin-bottom: 0;
     letter-spacing: 2px;
     text-align: center;
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
 }
 
 .couple-names-intro {
@@ -151,7 +150,7 @@ body.nav-open {
 
 .venue-title {
     position: absolute;
-    top: 16%;
+    top: 21%;
     left: 0;
     right: 0;
     font-family: 'Cormorant Garamond', serif;
@@ -161,7 +160,6 @@ body.nav-open {
     margin-bottom: 0;
     letter-spacing: 2px;
     text-align: center;
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
 }
 
 .date-intro {
@@ -177,7 +175,7 @@ body.nav-open {
 .hero-image {
     position: relative;
     margin: 0 auto 3rem auto;
-    height: auto;
+    height: 85vh;
     overflow: hidden;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
 }
@@ -185,6 +183,7 @@ body.nav-open {
 .hero-image img {
     width: 100%;
     height: auto;
+    margin-top: -10vh;
     display: block;
 }
 
@@ -234,9 +233,8 @@ body.nav-open {
     font-weight: 500;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: var(--white);
+    color: saddlebrown;
     text-decoration: none;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
     transition: color 0.2s ease;
 }
 
@@ -658,6 +656,20 @@ body.nav-open {
 }
 
 /* Mobile Responsiveness */
+@media (max-width: 1150px) {
+    .hero-image img {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 1050px) {
+    .hero-image img {
+        width: auto;
+        height: 100vh;
+        margin-bottom: -15vh;
+    }
+}
+
 @media (max-width: 768px) {
     .envelope {
         width: 300px;
@@ -667,7 +679,8 @@ body.nav-open {
     .couple-names {
         font-size: 2.5rem;
         color: var(--white);
-        top: 20%
+        top: 20%;
+        text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
     }
 
     .couple-names-intro {
@@ -686,6 +699,16 @@ body.nav-open {
 
     .hero {
         padding-bottom: 3rem;
+    }
+
+    .hero-image {
+         height: auto;
+    }
+
+    .hero-image img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 0;
     }
 
     .section {
