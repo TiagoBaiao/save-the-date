@@ -25,13 +25,50 @@
 <div class="white-fader" id="white-fader" style="display:none;"></div>
 <div class="content" id="content" style="display: none;">
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="hero">
         <div class="hero-content">
             <div class="hero-image">
                 <picture>
                     <source media="(max-width: 768px)" srcset="images/couple_mobile.jpg">
                     <img src="images/couple_desktop2.jpg" alt="Elisabete e Tiago">
                 </picture>
+                <nav class="site-nav" aria-label="Primary">
+                    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-overlay" aria-label="Open menu">
+                        <svg class="nav-toggle-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <line x1="4" y1="6" x2="20" y2="6"></line>
+                            <line x1="4" y1="12" x2="20" y2="12"></line>
+                            <line x1="4" y1="18" x2="20" y2="18"></line>
+                        </svg>
+                    </button>
+                    <ul class="nav-links">
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#details">Details</a></li>
+                        <li><a href="#countdown">Countdown</a></li>
+                        <li><a href="#schedule">Schedule</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#stay">Stay</a></li>
+                        <li><a href="#footer">Contact</a></li>
+                        <li><a href="rsvp.html" target="_blank">RSVP</a></li>
+                    </ul>
+                </nav>
+                <div class="nav-overlay" id="nav-overlay" aria-hidden="true">
+                    <div class="nav-overlay-content">
+                        <button class="nav-overlay-close" type="button" aria-label="Close menu">
+                            <svg class="nav-overlay-close-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                <line x1="5" y1="5" x2="19" y2="19"></line>
+                                <line x1="19" y1="5" x2="5" y2="19"></line>
+                            </svg>
+                        </button>
+                        <a href="#hero">Home</a>
+                        <a href="#details">Details</a>
+                        <a href="#countdown">Countdown</a>
+                        <a href="#schedule">Schedule</a>
+                        <a href="#gallery">Gallery</a>
+                        <a href="#stay">Stay</a>
+                        <a href="#footer">Contact</a>
+                        <a href="rsvp.html" target="_blank">RSVP</a>
+                    </div>
+                </div>
                 <h1 class="couple-names"><span data-fiance="1"></span> & <span data-fiance="2"></span></h1>
                 <h2 class="venue-title">Quinta Pinhal das Confreirias</h2>
             </div>
@@ -40,7 +77,7 @@
     </section>
 
     <!-- Event Details Section -->
-    <section class="section event-details">
+    <section class="section event-details" id="details">
         <div class="section-content">
             <h2 class="section-title">Join Us</h2>
             <div class="divider"></div>
@@ -64,7 +101,7 @@
     </section>
 
     <!-- Countdown Section -->
-    <section class="section countdown">
+    <section class="section countdown" id="countdown">
         <div class="section-content">
             <div id="countdown-timer">
                 <h2 class="section-title">Counting Down</h2>
@@ -125,7 +162,7 @@
     </section>
 
     <!-- Schedule Section -->
-    <section class="section schedule">
+    <section class="section schedule" id="schedule">
         <div class="section-content">
             <h2 class="section-title">Schedule of Events</h2>
             <div class="divider"></div>
@@ -191,7 +228,7 @@
     </section>
 
     <!-- Gallery Section -->
-    <section class="section gallery">
+    <section class="section gallery" id="gallery">
         <div class="section-content">
             <h2 class="section-title">Gallery</h2>
             <div class="divider"></div>
@@ -228,7 +265,7 @@
     </section>
 
     <!-- Accommodation Section -->
-    <section class="section accommodation">
+    <section class="section accommodation" id="stay">
         <div class="section-content">
             <h2 class="section-title">Where to Stay</h2>
             <div class="divider"></div>
@@ -259,7 +296,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" id="footer">
         <p>We can't wait to celebrate with you!</p>
         <p class="footer-small"><span data-fiance="1"></span> & <span data-fiance="2"></span></p>
     </footer>

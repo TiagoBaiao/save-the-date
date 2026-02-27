@@ -61,11 +61,91 @@ document.getElementById('envelope').addEventListener('click', function() {
                     initCountdown();
                     // Initialize gallery masonry layout
                     initGallery();
+                    // Initialize navigation interactions
+                    initNav();
                 }, 1000);
             }
         }, 500);
     }, 2500);
 });
+
+let navInitialized = false;
+
+function initNav() {
+    if (navInitialized) {
+        return;
+    }
+
+    const nav = document.querySelector('.site-nav');
+    const toggle = document.querySelector('.nav-toggle');
+    const overlay = document.querySelector('.nav-overlay');
+    const overlayClose = document.querySelector('.nav-overlay-close');
+
+    if (!toggle || !overlay || !nav) {
+        return;
+    }
+
+    navInitialized = true;
+
+    const updateNavScroll = () => {
+        if (window.scrollY > 20) {
+            nav.classList.add('is-scrolled');
+        } else {
+            nav.classList.remove('is-scrolled');
+        }
+    };
+
+    updateNavScroll();
+    window.addEventListener('scroll', updateNavScroll, { passive: true });
+
+    const closeNav = () => {
+        overlay.classList.remove('is-open');
+        toggle.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        overlay.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('nav-open');
+    };
+
+    const openNav = () => {
+        overlay.classList.add('is-open');
+        toggle.classList.add('is-open');
+        toggle.setAttribute('aria-expanded', 'true');
+        overlay.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('nav-open');
+    };
+
+    toggle.addEventListener('click', (event) => {
+        event.stopPropagation();
+        if (overlay.classList.contains('is-open')) {
+            closeNav();
+        } else {
+            openNav();
+        }
+    });
+
+    overlay.addEventListener('click', (event) => {
+        const link = event.target.closest('a');
+        if (link || event.target === overlay) {
+            closeNav();
+        }
+    });
+
+    if (overlayClose) {
+        overlayClose.addEventListener('click', closeNav);
+    }
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            closeNav();
+        }
+    });
+
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            closeNav();
+        }
+    });
+}
 
 // Countdown Timer Logic
 function initCountdown() {
@@ -240,4 +320,5 @@ function initGallery() {
 // Initialize gallery when content is visible
 if (document.getElementById('content').style.display !== 'none') {
     initGallery();
+    initNav();
 }
