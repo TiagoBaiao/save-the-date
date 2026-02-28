@@ -393,6 +393,10 @@ body.nav-open {
     line-height: 1.8;
 }
 
+.info-item p > a {
+    color: var(--text-light);
+}
+
 .venue-address {
     margin-top: 0.5rem;
     font-size: 1rem;
