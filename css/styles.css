@@ -397,7 +397,8 @@ body.nav-open {
     color: var(--text-light);
 }
 
-.info-item p > a:hover {
+.info-item p > a:hover,
+.info-item p > a:focus {
     color: var(--dark-olive);
 }
 
