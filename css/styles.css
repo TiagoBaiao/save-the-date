@@ -581,6 +581,33 @@ body.nav-open {
     transform: scale(1.05);
 }
 
+.gallery-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.gallery-link {
+    display: inline-block;
+    padding: 0.9rem 2.5rem;
+    background: var(--olive-green);
+    color: var(--white);
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-size: 0.85rem;
+}
+
+.gallery-link:hover {
+    background: var(--dark-olive);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(139, 157, 131, 0.3);
+}
+
 /* Footer */
 .footer {
     background: var(--olive-green);
@@ -863,5 +890,10 @@ body.nav-open {
     .gallery-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
+    }
+
+    .gallery-link {
+        padding: 0.8rem 2rem;
+        font-size: 0.8rem;
     }
 }
